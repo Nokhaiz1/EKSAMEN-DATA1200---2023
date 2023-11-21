@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="NO">
+<!-- Head-seksjonen inneholder meta-informasjon og lenker til eksterne ressurser for nettsiden. -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OsloMet | Home</title>
+    <!-- css link -->
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <!-- responsive css -->
+    <link rel="stylesheet" href="./assets/css/responsive.css" />
+<!-- Slutten på head-seksjonen -->   
+</head>
+<!-- Body-seksjonen begynner. Her plasseres hovedinnholdet på nettsiden som vil være synlig for brukeren. -->
+<body>
+     <!-- header start- definerer toppeksjonen av nettsiden, og inneholder logo og navigasjonsmeny -->
+     <header>
+        <div class="container"> 
+            <!--navbar definerer navigasjonslenkene på siden-->
+            <nav class="navbar"> <!-- Top meny -->
+                <!--Logoseksjon og lenke til hjemmesiden-->
+                <a href="/" class="header-logo">
+                    OsloMet
+                </a>
+                <ul class="navlink" id="menu">
+                    <!-- iste over navigasjonslenker -->
+                    <li><a href="/">HJEM</a></li> 
+                    <li><a href="./Accessibility.html">ACCESSIBILITY</a></li>
+                    <li><a href="./Topical.html">TOPICAL</a></li>
+                    <li><a href="./Idrett.html">IDRETT</a></li>
+                    <!-- Lukkeknapp seksjon for mobilmeny: Klikk på denne lenken, skjuler menyen via CSS-styling. -->
+                    <li class="closebtn">
+                        <a href="#">
+                            <!-- Visuell representasjon av en lukkeknapp for mobilmenyen, i dette tilfellet vist som et 'X'-symbol. --> 
+                            <div class="hamburger"> 
+                                <span></span> <!-- Brukt for å style "X" ikonet og ha den synlig. -->
+                            </div>
+                        </a>
+                    </li>
+                </ul> 
+            </nav> 
+            <!-- Menyvender-knapp for mobilvisning -->
+            <a href="#menu" class="menu-toggle">
+                <!-- 'hamburger'-div som inneholder selve ikonet for mobilmenyen. 
+                Når brukere klikker på denne, vil de bli tatt til elementet med ID 'menu', 
+                som vanligvis vil være toppen av ul-listen med navigasjonslenker. -->
+                <div class="hamburger">
+                <!-- 'span' brukes til å lage en av de linjene i hamburgerikonet.
+                Vanligvis ville det være tre slike 'span'-elementer for å fullføre ikonet.
+                Denne enkelte 'span' kan være stylet med CSS for å vises som øverste, midterste eller nederste linje av ikonet. -->
+                    <span></span> 
+                </div>
+            </a>
+        </div>
+    </header>
+    <!-- Header slutt -->
+
+    <!-- main seksjon start, viser hovedinnholdet -->
+    <main>
+        <!-- hero seksjonen brukes for å definere en egen sekjson innen main-innholdet -->
+        <section class="hero-section">
+            <div class="container"> 
+                <!-- det som inneholder hovedbudskapet i hero-seksjonen -->
+                <div class="hero-contant"> 
+                    <!-- Overskrift, beskriver hovedtemaet-->
+                    <h1>Velkommen til OsloMet</h1>
+                    <!-- Paragraf som er med i seksjonen -->
+                    <p>Hvor lidenskap møter læring og skaper verdifulle muligheter. Utforsk din vei til suksess gjennom vårt mangfold av kunnskap og erfaring!</p>
+                     <!-- <a class="custom-btn"> er en lenke som ser ut som en knapp, for estetisk layout. -->
+                    <a href="#" class="custom-btn">LES MER</a>
+                </div> 
+            </div>
+        </section>
+        <!-- seksjon slutt -->
+
+        <!-- seksjon start for fremheving av deler fra campus -->
+        <section class="campus-feature-section section-padding">
+            <div class="container"> 
+                <!-- en samling av bilder som viser forskjellige deler av campusen -->
+                <div class="campus-image-card"> 
+                  <div class="campus-card"> 
+                        <!-- bilde kilde: "biblioteket", bilde er tatt på egen telefon og lagt inn -->
+                        <img src="./assets/image/png/Biblotek.png" alt="Biblotek" class="img-fluid">
+                        <h4 class="section-subheading text-center">Bibloteket</h4> <!-- Bildebeskrivelse -->
+                    </div>
+                    <div class="campus-card"> 
+                        <!-- bilde kilde: "Klasserom" hentet fra student.oslomet.no
+                        (https://student.oslomet.no/en/auditorier-undervisningsrom/-/undervisningsrom/campus/PIL/bygning/P35/rom/P35P35-PH170) -->
+                        <img src="./assets/image/png/klasseromP35.png" alt="Klasserom" class="img-fluid">
+                        <h4 class="section-subheading text-center">Klasserom</h4> 
+                    </div>
+                    <div class="campus-card"> 
+                        <!-- bilde kilde: "Kantine", bilde er tatt på egen telefon og lagt inn -->
+                        <img src="./assets/image/png/KantineP35.png" alt="Kantine" class="img-fluid">
+                        <h4 class="section-subheading text-center">Kantine</h4> 
+                    </div>
+                </div>
+            </div>
+        </section> 
+        <!-- Seksjon slutt -->
+
+        <!-- seksjon for "hvorfor velge OsloMet?" -->
+        <section class="campus-info-section section-padding">
+            <div class="container">
+                <h2 class="section-title text-center">Hvorfor velge OsloMet?</h2>
+                <div class="campus-info-row">
+                    <div class="campus-info-col-left">
+                        <div class="campus-info-contant">
+                            <h2 class="section-heading">Dette tilbyr vi</h2>
+                            <!-- Paragrafer om hva skolen tilbyr -->
+                            <p class="paragraph campus-detail">
+                                Oslomet er et mangfoldig og flerkulturelt lærested som ligger sentralt i Oslo. 
+                                Skolen har et givende miljø der studenter fra forskjellige bakgrunner samles for å lære og vokse sammen. 
+                                Med engasjerte og erfarne lærere blir studentene veiledet gjennom ulike studieretninger,
+                                og skolen tilbyr et bredt spekter av spennende fagområder. Den sosiale atmosfæren på Oslomet er unik, 
+                                med gode medstudenter og et mangfold av studentorganisasjoner som bidrar til et levende og inkluderende fellesskap.
+                            </p>
+                            <p>
+                                Oslomet er ikke bare et sted for akademisk utvikling, men også for personlig vekst. 
+                                Skolens sterke fokus på mangfoldighet og det flerkulturelle miljøet skaper en unik læringsopplevelse.
+                            </p>
+                            <!-- Knapp for layout utsende, men ved trykk leder den deg til toppen av siden -->
+                            <a href="#" class="custom-btn">LES MER</a>
+                        </div>
+                    </div>
+                    <div class="campus-info-col-right">
+                        <!-- bilde kilde: "Retninger til byggene", hentet fra: Eurosign.no
+                        (https://www.eurosign.no/prosjekter/oslomet)-->
+                        <img src="./assets/image/png/retninger.png" alt="studieretninger" class="img-fluid">
+                        <!-- Bildekilde under bilde-->
+                        <small class="bildetekst">Hentet fra: <a href="https://www.eurosign.no/prosjekter/oslomet" 
+                        target="_blank"> Eurosign.no</a>//Foto: Ukjent</small> <!-- Target-blank åpner lenken i ekstern fane.-->
+                    </div>
+                </div>
+            </div>
+        </section> 
+        <!-- Seksjon slutt -->
+
+        <!-- seksjon der du kan abonnere på nyhetsbrevet -->
+        <section class="contact-section section-margin">
+            <div class="container">
+                <div class="contact-row">
+                    <h2 class="section-heading text-center">Abonner på vårt nyhetsbrev</h2>
+                    <!-- Inneholder elementer for å abonnere på nyhetsbrevet -->
+                    <div class="form-control-wrap"> 
+                        <!-- Lenkeknapp for å abonnere på nyhetsbrevet, leder brukeren til en ekstern side for å abonnere på nyhetsbrevet -->
+                        <!-- Kilde til lenke: OsloMet (2023), OsloMet.no hentet fra:(https://www.oslomet.no/nyhetsbrev) -->
+                        <a href="https://www.oslomet.no/nyhetsbrev" target="_blank" class="custom-btn">ABONNER</a>
+                    </div>
+                
+                </div>
+            </div>
+        </section>
+    </main> 
+    <!-- Main seksjon slutt, her slutter hovedinnholdet -->
+
+    <!-- footer seksjon start- viser innholdet på bunnen av siden som lenker, kontakt & sosiale medier -->
+    <footer class="section-margin">
+        <div class="container">
+            <div class="footer-row">
+                <div class="footer-col">
+                    <h6>Lenker</h6>
+                    <!-- Liste med lenker -->
+                    <ul class="footer-link">
+                        <li><a href="/">HJEM</a></li> 
+                        <li><a href="./Accessibility.html">ACCESSIBILITY</a></li> 
+                        <li><a href="./Topical.html">TOPICAL</a></li> 
+                        <li><a href="./Idrett.html">IDRETT</a></li> 
+                        <li><a href="./Data1200-Eksamenskilder.pdf" target="_blank">KILDER</a></li> 
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h6>Kontaktinformajson</h6>
+                    <!-- Liste med kontaktinformasjon -->
+                    <ul class="footer-link">
+                        <li>Pilestredet 35, 0166 Oslo</li> 
+                        <li><a href="#">67 23 50 00</a></li> 
+                        <li><a href="#">Oslomet@hotmail.no</a></li> 
+                    </ul> 
+                </div>
+                <div class="footer-col">
+                    <h6>Sosiale Medier</h6>
+                    <!-- Liste med lenker til sosiale medier -->
+                    <ul class="footer-col-wrap">
+                        <li> 
+                            <!-- bilde kilde: "Facebook logo" hentet fra: edigitalagency.com.au 
+                            (https://www.edigitalagency.com.au/logos/new-facebook-logo-png/) -->
+                            <a href="https://www.facebook.com/oslomet/" class="footer-icon" target="_blank">
+                                <img src="./assets/image/png/facebook.png" alt="facebook">
+                            </a>
+                        </li>
+                        <li>
+                            <!-- bilde kilde: "Twitter logo" hentet fra: iconsdb.com 
+                            (https://www.iconsdb.com/gray-icons/twitter-icon.html) -->
+                            <a href="https://twitter.com/OsloMet?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor" class="footer-icon" target="_blank">
+                                <img src="./assets/image/png/twitter.png" alt="twitter">
+                            </a>
+                        </li>
+                        <li>
+                            <!-- bilde kilde: "Youtube logo" hentet fra: no.pinterest.com
+                            (https://no.pinterest.com/pin/607774912209762810/) -->
+                            <a href="https://www.youtube.com/@OsloMetFilm" class="footer-icon" target="_blank">
+                                <img src="./assets/image/png/youtube.png" alt="youtube">
+                            </a>
+                        </li>
+                        <li>
+                            <!-- bilde kilde: "Instagram logo" hentet fra: depositphotos.com
+                            (https://depositphotos.com/no/vectors/instagram-logo.html) -->
+                            <a href="https://www.instagram.com/oslomet/" class="footer-icon" target="_blank">
+                                <img src="./assets/image/png/instagram.png" alt="instagram">
+                            </a>
+                        </li>
+                    </ul> 
+                </div>
+            </div>
+           
+        </div>
+        <!-- Footer slutt, her slutter innholdet på bunnen av siden -->
+        <div class="footer-copyright"> <!--div boks for bunnramme -->
+            <div class="container"> 
+                <p>© 2023 Opphavsrett Alle rettigheter forbeholdt</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="NO">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home | Accessibility</title>
+    <!-- css links -->
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <!-- responsive css -->
+    <link rel="stylesheet" href="./assets/css/responsive.css" />
+</head>
+<body>
+     <!-- header start -->
+     <header>
+        <div class="container">
+            <nav class="navbar">
+                <a href="/" class="header-logo">
+                    OsloMet
+                </a>
+                <ul class="navlink" id="menu">
+                    <li><a href="/">HJEM</a></li>
+                    <li><a href="./Accessibility.html">ACCESSIBILITY</a></li>
+                    <li><a href="./Topical.html">TOPICAL</a></li>
+                    <li><a href="./Idrett.html">IDRETT</a></li>
+                    <li class="closebtn">
+                        <a href="#">
+                            <div class="hamburger">
+                                <span></span> 
+                            </div>
+                        </a>
+                    </li>
+                </ul> 
+            </nav>
+            <a href="#menu" class="menu-toggle">
+                <div class="hamburger">
+                    <span></span>
+                </div>
+            </a>
+        </div>
+    </header>
+
+    <!-- main section -->
+    <main>
+        <!-- breadcrumb section (toppbilde på siden med tekst og trykke funksjon)-->
+        <section class="breadcrumb-sec breadcrumb-sec2">
+            <div class="container">
+                 <!-- <h3> gir en overskrift for breadcrumb-seksjonen, indikerer gjeldende side og navigasjonssti. -->
+                <!-- <span> brukes for stilistisk formål, og <a> angir en lenke tilbake til hjemmesiden. -->
+                <h3><span class="font-regular"><a href="index.html"> HJEM </a></span> > Accessibility (Testing av koden vår og og sikre tilgjengelighet på nettsiden vår)</h3>
+            </div>
+        </section>
+
+        <!-- tilgjenglighettest intro -->
+        <!-- <section> brukes for å definere en gruppe av innholdet, i dette tilfellet gir vi en kort intro om hva Accessibility går ut på -->
+        <section class="section-p section-padding">
+            <div class="container">
+                <div class="section-wrap">
+                    <div class="section-img">
+                        <!-- bilde kilde: "Koding på pc", hentet fra: queensu.ca
+                             (https://www.queensu.ca/gazette/stories/google-and-microsoft-are-creating-monopoly-coding-plain-language)-->
+                        <img src="./assets/image/png/Accessibility-bilde1.png" alt="Accessibility">
+                        <small class="bildetekst">Hentet fra: <a href="https://www.queensu.ca/gazette/stories/google-and-microsoft-are-creating-monopoly-coding-plain-language" target="_blank>"> queensu.ca</a>//Foto: Arnold Francisca</small>
+                    </div>
+                    <div class="section-info">
+                        <h1 class="section-subheading">Hva er Accessibility?</h1>
+                        <p>
+                            Tilgjengelighet på en nettside refererer til designet og implementeringen av funksjoner som gjør det mulig for alle,
+                            uavhengig av eventuelle funksjonshemminger eller begrensninger, å oppfatte, forstå og samhandle fullt ut med innholdet.
+                             Dette inkluderer hensyn til visuelle, auditive, motoriske, kognitive og nevrologiske behov. Målet med tilgjengelighet er 
+                             å skape en inkluderende digital opplevelse, der alle brukere har lik adgang til informasjon og funksjonalitet.
+                             Dette kan omfatte bruk av alternative tekstbeskrivelser for bilder, tilgjengelige navigasjonsmetoder, kontrastrike fargevalg,
+                             tekst som kan forstørres, og andre tiltak som sikrer at nettsiden er tilgjengelig for alle, uavhengig av individuelle forskjeller og behov.
+                        </p>
+
+                        <p>
+                            En tilgjengelig nettside kan ikke bare oppfylle retningslinjer og standarder, men vise også et engasjement for å skape en inkluderende digital verden for alle brukere.
+                            Teamet vårt tok opp diskusjoner om universell og inkluderende design. Vi gikk gjennom variasjonen av funksjonshemninger som mennesker kan oppleve, og sikret at nettsiden 
+                            vår ble tilrettelagt for alle disse behovene.
+                        </p>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+        <hr/>
+        <!--Section for testresultater og forbedring-->
+        <section class="section-p section-padding">
+            <div class="container">
+                <div class="section-wrap">
+                    <div class="section-info">
+                        <h2 class="section-subheading">Testing av Accessibility</h2>
+                        <p 
+                            class="paragraph_A">
+                            Nettstedes tilgjengelighet ble testet ved å bynytte en kombinasjon av automatiserte verktøy og manuell gjennomgang.
+                            Blant de automatiserte verktøyene som ble brukt, var <a href="https://wave.webaim.org/" target="_blank"> WAVE Evaluation tool </a>, 
+                            <a href="https://achecks.org/checker/index.php" target="_blank">Achecher</a> og <a href="https://validator.w3.org/?fbclid=IwAR3VpNh7VZUAZtUGrP6e9XG7E7ahVIvDCisycHnJobMm4dRPPRf6XA9NsZM#validate_by_upload" 
+                             target="_blank"> Walidator.w3</a>, men vi tok utgangspunktet i testen fra Walidator.w3. Under vår grundige gjennomgang ble alle HTML-sidene nøye testet for tilgjengelighetsfeil.
+                             Vedlagte bilde viser en oversikt over de inkonsistensene som ble oppdaget under evalueringen. Det er verdt å merke seg at den samme feilen ble konsekvent identifisert på tvers av alle HTML-dokumentene i testprosessen.
+                         </p>
+                        <p>
+                            Den automatiserte testen avdekket en strukturell HTML-feil hvor hyperlenker (referert til som 'a'-elementer) var plassert direkte under en uordnet liste (referert til som 'ul') uten å være innkapslet i listeelementer
+                            (referert til som 'li'). Dette er i strid med HTML-standarder som krever at 'a'-elementer innenfor 'ul' må være omsluttet av 'li'-elementer. Testen identifiserte også en manglende avsluttende tag for et 'div'-element 
+                            og et uavsluttet 'nav'-element, noe som kan forårsake problemer med hvordan siden vises og tilgjengeligheten for assistive teknologier. Disse feilene ble rettet for å sikre riktig dokumentstruktur og forbedre tilgjengeligheten.  
+                        </p>
+                        <p>
+                            For å løse feilene, ble hyperlenker som var plassert direkte under en uordnet liste, omsluttet av listeelementer for å følge HTML-strukturstandardene.
+                            Videre ble manglende avsluttende tagger for 'div'-elementer lagt til, og 'nav'-elementet som var uavsluttet ble lukket korrekt, noe som forbedret sidens struktur og tilgjengelighet.
+                            Etter korrigeringen av den initielle feilen, ble vi oppmerksomme på en ny utfordring. 
+                        </p>
+                        <p>
+                            Lukkeknappen, som tidligere var plassert i øvre høyre hjørne av hamburgermenyen, hadde uventet forflyttet seg til midten på venstre side av menyen. 
+                            Dette visuelle misforholdet var uakseptabelt og krevde umiddelbar oppmerksomhet. For å rette opp i dette måtte vi revidere CSS-koden for 'closebtn'-klassen.
+                            Opprinnelig var denne satt til 'display: block;', men vi endret dette til de spesifikasjonene som er illustrert i det vedlagte bildet. Feilen oppstod fordi
+                            lenken ('a'-elementet) var plassert direkte inn i et listeelement ('li'), noe som resulterte i en uønsket plassering av lukkeknappen. 
+                            Ved å innføre en 'a'-tagg innenfor en 'li'-klasse med betegnelsen 'closebtn' i indekskoden, ble problemet løst og lukkeknappen returnerte til sin riktige posisjon øverst til høyre.
+                        </p> 
+                    </div>
+                    <div class="section-img order">
+                        <img src="./assets/image/png/TEST.PNG" alt="Testresultater">
+                        <small class="bildetekst">Testresultat hentet ut fra: <a href="https://validator.w3.org/?fbclid=IwAR3VpNh7VZUAZtUGrP6e9XG7E7ahVIvDCisycHnJobMm4dRPPRf6XA9NsZM#validate_by_upload" target="_blank"> Validator.w3.org</a>//Foto: Skjermbilde</small>
+
+                        <img src="./assets/image/png/HTML.png" alt="CSS kode">
+                        <small class="bildetekst">Skjermbilde tatt ifra HTML-kode.</small>
+
+                        <img src="./assets/image/png/CSS.png" alt="HTML kode">
+                        <small class="bildetekst">Skjermbilde tatt ifra CSS-kode.</small>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <hr />
+        <section class="section-p section-padding">
+            <div class="container">
+                <div class="section-wrap">
+                    <div class="section-img">
+                        <img src="./assets/image/png/fargetest2.png" alt="fargetest">
+                        <!-- bilde kilde: "Testresultat", hentet fra: color.adobe.com (https://color.adobe.com/nb/create/color-contrast-analyzer)-->
+                        <small class="bildetekst">Testresultat hentet ut fra: <a href="https://color.adobe.com/nb/create/color-contrast-analyzer" target="_blank"> color.adobe.com</a>//Foto: Skjermbilde</small>
+                    </div>
+                    <div class="section-info">
+                        <h2 class="section-subheading">Universell utforming</h2>
+                        <p class="paragraph">
+                             I vår utvikling av OsloMet sitt nettsted har vi ivaretatt universell design for å sikre en attraktiv og tilgjengelig brukerflate.
+                             Vi har benyttet høykontrastfarger for bedre lesbarhet og synlighet for synshemmede, og bruker stor og tydelig tekst for å fremheve viktig informasjon.
+                             Vår navigasjonsmeny er konsekvent og intuitiv, slik at brukere enkelt kan navigere på siden. "LES MER"-knappene er klare og lett synlige, 
+                             og vi bruker beskrivende tekster for bilder, tilgjengelig for skjermlesere, for å støtte brukere med ulike behov.</p>
+
+                        <p class="paragraph">
+                            Vi har gjort nettstedet vårt tilgjengelig for alle ved å sørge for at interaktive elementer kan betjenes med både tastatur og mus.
+                            Vi inviterer til brukerengasjement gjennom tilbakemeldinger og deling av erfaringer, noe som bidrar til et inkluderende samfunn. 
+                            Vårt mål er å tilby en brukervennlig og inkluderende opplevelse for alle besøkende.
+                        </p>
+                        <p class="paragraph">
+                           For bruk av farger har vi benyttet farger for å separere og organisere innholdet vårt. Kontrast er et viktig aspekt, og for å teste dette brukte vi 
+                           "Adobe color" kontrastsjekker. Denne nettsiden gjorde det enkelt for oss å sjekke hvor tilgjengelig fargebruken er ved å legge inn fargen for bakgrunnen og teksten.
+                           (se vedlagt bilde)
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+       
+    </main>
+    
+     <!-- footer section start -->
+     <footer class="section-margin">
+        <div class="container">
+            <div class="footer-row">
+                <div class="footer-col">
+                    <h6>Lenker</h6>
+                    <ul class="footer-link">
+                        <li><a href="/">HJEM</a></li>
+                    <li><a href="./Accessibility.html">ACCESSIBILITY</a></li>
+                    <li><a href="./Topical.html">TOPICAL</a></li>
+                    <li><a href="./Idrett.html">IDRETT</a></li>
+                    <li><a href="./Data1200-Eksamenskilder.pdf" target="_blank">KILDER</a></li> 
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h6>Kontaktinformajson</h6>
+                    <ul class="footer-link">
+                        <li>Pilestredet 35, 0166 Oslo</li>
+                        <li><a href="#">67 23 50 00</a></li>
+                        <li><a href="#">Oslomet@hotmail.no</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h6>Sosiale Medier</h6>
+                    <ul class="footer-col-wrap">
+                        <li>
+                            <a href="https://www.facebook.com/oslomet/" class="footer-icon" target="_blank">
+                                <img src="./assets/image/png/facebook.png" alt="facebook">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://twitter.com/OsloMet?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor" class="footer-icon" target="_blank">
+                                <img src="./assets/image/png/twitter.png" alt="twitter">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.youtube.com/@OsloMetFilm" class="footer-icon" target="_blank">
+                                <img src="./assets/image/png/youtube.png" alt="youtube">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.instagram.com/oslomet/" class="footer-icon" target="_blank">
+                                <img src="./assets/image/png/instagram.png" alt="instagram">
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+           
+        
+        </div>
+        <div class="footer-copyright">
+            <div class="container">
+                <p>© 2023 Opphavsrett Alle rettigheter forbeholdt</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

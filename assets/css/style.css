@@ -1,0 +1,980 @@
+/*Importerer Poppins-skrifttypene fra Google Fonts. 
+   Dette inkluderer forskjellige fontvekter (100 til 800) for å gi mer fleksibilitet i typografien. */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800&display=swap');
+
+/* Global stilinnstilling. 
+   Setter margin og padding til 0 på alle elementer for å fjerne standard nettlesermarginer og padding.
+   Bruker 'box-sizing: border-box' for å sikre at elementenes totale bredde og høyde inkluderer padding og border. */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* rooten av fargebruken, Definerer generelle fargevariabler for enkel tilpasning og konsistent bruk på tvers av nettstedet. */
+:root {
+    --primary-color: #00235B;
+    --white-color: #fff;
+    --grey-color: #f0f0f0;
+    --lightgrey-color: #98999b;
+    --lightblack-color: #f1f1f1;
+    --yellow-color: #ffd500;
+    --black-color: #000;
+}
+
+/* Setter standard skrifttype for hele dokumentet til 'Poppins', med sans-serif som fallback. */
+body {
+    
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Fjerner understreking fra alle hyperlenker for å gi et renere utseende. */
+a {
+    text-decoration: none;
+}
+
+/* Hjelpeklasse for å sentrere tekst i et element. */
+.text-center {
+    text-align: center;
+}
+
+/* Tilpasser utseendet på tekst som er valgt (highlighted) av brukeren, 
+   med en gul bakgrunn og mørkeblå tekst, som definert i root-variablene. */
+::selection {
+    background-color: var(--yellow-color);
+    color: var(--primary-color);
+}
+
+/* Container-klasse for å sentrere innhold med en maks bredde og padding. */
+.container {
+    max-width: 89.375rem; /* Maksimal bredde på containeren */
+    margin: 0 auto; /* Sentrerer containeren horisontalt */
+    padding: 0 1rem; /* Padding på sidene for å unngå at innholdet berører kantene */
+}
+
+/* Generell stil for tilpassede knapper, med animasjon, padding, bakgrunnsfarge, og avrundede hjørner. */
+.custom-btn {
+    padding: 0.75rem 1.875rem; /* Padding rundt teksten */
+    background-color: var(--yellow-color); /* Bakgrunnsfarge satt til gul */
+    color: var(--primary-color); /* Tekstfarge satt til primærfarge */
+    transition: all 0.5s; /* Glatt overgangseffekt for alle egenskaper */
+    border-radius: 0.75rem; /* Avrundede hjørner */
+    display: inline-block; /* Gjør at knappen kan settes ved siden av andre elementer */
+    max-width: max-content;  /* Maks bredde satt til innholdets bredde */
+    border: 0.062rem solid transparent; /* Gjennomsiktig kant for jevn overgangseffekt */
+    transition: all 0.5s; 
+    position: relative; /* Nødvendig for absolutt posisjonerte pseudo-elementer */
+    overflow: hidden; /* Skjuler deler av pseudo-elementet som går utenfor knappen */
+    z-index: 0; /* Z-indeks for stabling av elementer */
+}
+
+/* Pseudo-element for å legge til en visuell effekt bak knappen ved hover. */
+.custom-btn::after {
+    position: absolute; /* Absolutt posisjonert i forhold til knappen */
+    content: ''; /* Tomt innhold, brukt kun for stilen */
+    top: 0; /* Plassert i øvre venstre hjørne av knappen */
+    left: 0; 
+    height: 100%;  /* Full høyde av knappen */
+    width: 0; /* Start bredde, endres ved hover */
+    background-color: var(--white-color); /* Bakgrunnsfarge for effekten */
+    opacity: 0.5; /* Gjør fargen halvgjennomsiktig */
+    transition: all 0.5s; /* Overgangseffekt */
+    z-index: -1; /* Plassert bak teksten i knappen */
+    border-radius: 0.75rem; /* stilinnstillingen sørger for at pseudo-elementet har den samme avrundingen i hjørnene som selve knappen, */
+}
+
+/* Stilendringer for pseudo-elementet når knappen holdes over. */
+.custom-btn:hover::after {
+    width: 100%; /* Utvider bredden til hele knappen */
+    transition: all 0.5s;  /* Overgangseffekt */
+}
+
+/* Endrer tekstfarge på knappen når den holdes over. */
+.custom-btn:hover {
+    color: var(--primary-color); /* Beholder primærfargen */
+    transition: all 0.5s; /* Overgangseffekt for fargeendring */
+}
+
+/* Stil for hovedoverskrifter i ulike seksjoner. 
+   Setter stor skriftstørrelse, fet skrift, primærfarge og en understrekning for visuell fremheving. */
+.section-title {
+    font-size: 2.25rem; /* Stor skriftstørrelse for tydelighet */
+    font-weight: 600; /* Fet skrift for å skille ut tittelen */
+    color: var(--primary-color); /* Fargen definert i root for konsistens */
+    margin-bottom: 1.875rem; /* Margin for å skape rom under tittelen */
+    text-decoration: underline; /* Understreking for å fremheve tittelen */
+}
+
+/* Tilpasset stil for underoverskrifter, brukt spesielt på index og accessibility sider. 
+   Mindre og i en kontrasterende gul farge for å skille dem fra hovedoverskrifter. */
+.section-subheading {
+    font-size: 1.5rem; /* Mindre skriftstørrelse enn .section-title */
+    font-weight: 600; /* Samme skriftvekt for konsistens */
+    color: var(--yellow-color); /* Gul farge for å skape visuell interesse */
+}
+
+/* Stil for lenker innenfor en spesifikk paragrafklasse. 
+   Setter standard farge, skriftstørrelse og understrekning for lenker. */
+.paragraph_A a {
+    color: black;
+    font-size: medium;
+    text-decoration: underline; /* Understreking for å indikere klikkbare lenker */
+}
+
+/* Stil for overskrifter på 'topical' siden. 
+   Litt mindre og lettere enn .section-title for å tilpasse sidens kontekst. */
+.section-heading {
+    font-size: 2rem;
+    font-weight: 500;
+    color: var(--primary-color);
+}
+
+/* Generell stil for paragrafer. 
+   Definerer skriftstørrelse og linjeavstand for god lesbarhet. */
+p {
+    font-size: 1.125rem;
+    line-height: 1.2;
+}
+
+/* Stil for formkontroller som inputfelt eller tekstområder. 
+   Inkluderer skyggeeffekter, padding, avrundede hjørner og typografiske tilpasninger. */
+.form-control {
+    box-shadow: rgba(0, 0, 0, 0.02) 0rem 0.062rem 0.187rem 0rem, rgba(27, 31, 35, 0.15) 0rem 0rem 0rem 0.062rem;  /* Skyggeeffekt for å løfte elementet visuelt */
+    padding: 1.25rem 1rem; /* Padding for å gi rom rundt innholdet */
+    border-radius: 6.25rem; /* Sterkt avrundede hjørner for et moderne utseende */
+    max-width: 20rem; /* Maksimal bredde, men tilpasser seg mindre skjermer */
+    width: 100%; /* Full bredde innenfor forelderelementet */
+    border: none; /* Ingen synlig ramme for et rent utseende */
+    outline: none; /* Fjerner standard fokusomriss for tilpasset stil */
+    font-size: 1rem; 
+    font-weight: 500;
+    background-color: transparent; /* Gjennomsiktig bakgrunn for fleksibilitet */
+    color: var(--primary-color); /* Tekstfarge satt til primærfargen */
+}
+
+/* Denne klassen brukes for å sette normal skrifttykkelse. 
+   Nyttig når du trenger å endre skrifttykkelsen på spesifikke tekststykker til standard tykkelse. */
+.font-regular {
+    font-weight: 400;
+}
+
+/* header css - Stil for sidens hovedheader. */
+header {
+    position: fixed; /* Holder headeren på toppen av siden */
+    top: 0; /* Holder headeren på toppen av siden */
+    left: 0; /* Linjerer til venstre side av skjermen */
+    right: 0; /* Strekker seg til høyre side av skjermen */
+    width: 100%; 
+    z-index: 999; /* Sikrer at headeren er over andre elementer */
+    background-color: var(--yellow-color); 
+}
+
+/* Stil for navigasjonsbaren, bruker flexbox for å sentrere elementer og gi god layout. */
+.navbar {
+    display: flex;
+    align-items: center;
+    padding: 1.25rem;
+    position: relative; /* Nødvendig for posisjonering av barn */
+}
+
+/* Stil for navigasjonslenker, ordner lenkene horisontalt med mellomrom. */
+.navlink {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+    list-style: none;
+    gap: 6.25rem;
+}
+/* Stil for individuelle navigasjonslenker. */
+.navlink li a {
+    font-size: 1rem;
+    color: var(--primary-color);
+    position: relative;
+    font-weight: 500;
+}
+/* Pseudo-element for en stilig understrekningseffekt under navigasjonslenker ved hover. */
+.navlink li a::after {
+    position: absolute;
+    content: ''; /* Ingen synlig innhold, kun brukt for stilen */
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 0.062rem;
+    background-color: var(--primary-color);
+    transition: all 0.5s; /* Glatt animasjon for overgangen */
+}
+
+/* Animasjonseffekt for pseudo-elementet ved hover. */
+.navlink li a:hover::after {
+    width: 100%; /* Utvider linjen til full bredde av lenken */
+    transition: all 0.5s; 
+}
+
+/* Stil for logoen i headeren. 
+   Stor skriftstørrelse, fet skrift, og hovedfargen brukes for å skille den ut. */
+.header-logo {
+    font-size: 2.25rem;
+    text-transform: capitalize;
+    font-weight: 700;
+    color: var(--primary-color);
+    display: block;
+}
+
+/* Skjuler 'close' knappen som standard. */
+.closebtn {
+    display: none;
+}
+
+/* Sikrer at bilder er responsivt og tilpasser seg containerens bredde. */
+.img-fluid {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Legger til standard padding på toppen for seksjoner. */
+.section-padding {
+    padding-top: 2.5rem;
+}
+
+/* Legger til standard margin på toppen for seksjoner. */
+.section-margin {
+    margin-top: 2.5rem;
+}
+
+/* Posisjonerer hamburgerikonet innenfor .closebtn-elementet. */
+.closebtn .hamburger {
+    top: 3.125rem;  /* Plasserer hamburgerikonet 3.125rem fra toppen av nærmeste relativt plasserte element */
+    right: 3.125rem; /* Plasserer hamburgerikonet 3.125rem fra høyre kant av nærmeste relativt plasserte element */
+}
+
+/* Gjør bakgrunnen til linjene i hamburgerikonet gjennomsiktig innenfor .closebtn-elementet. */
+.closebtn .hamburger span {
+    background-color: transparent;
+}
+
+/* Tilpasser utseendet til etter-linjen i hamburgerikonet når .closebtn er i bruk. */
+.closebtn .hamburger span::after {
+    transform: rotate(-45deg); /* Roterer linjen -45 grader for å skape et kryss */
+    bottom: 0; /* Plasserer den roterte linjen ved bunnen av span-elementet */
+}
+/* Tilpasser utseendet til før-linjen i hamburgerikonet */
+.closebtn .hamburger span::before {
+    transform: rotate(45deg);
+    top: 0;
+}
+
+/* Endrer bakgrunnsfargen til hamburgerikonet til gjennomsiktig når det er i fokus. */
+.hamburger:focus {
+    background-color: transparent;
+}
+
+/*Stil for hamburgerikonet. 
+   Posisjonert absolutt for presis plassering og skjult som standard. */
+.hamburger {
+    height: 1.875rem;
+    width: 1.875rem;
+    position: absolute; /* Absolutt posisjonering for nøyaktig kontroll */
+    top: 50%;
+    right: 3.125rem;
+    cursor: pointer; /* Endrer musepekeren til en pekefinger for å indikere klikkbarhet */
+    display: none; /* Skjult som standard*/
+}
+
+/* Stil for linjen i hamburgerikonet. */
+.hamburger span {
+    width: 100%;
+    height: 0.187rem;
+    background-color: var(--primary-color);
+    position: relative; /* Satt til relativt for å posisjonere pseudo-elementer korrekt */
+    display: block; /* Gjør elementet til et blokkelement som tar opp hele tilgjengelig bredde. */
+}
+
+/* Pseudo-element for å lage en ekstra linje under den sentrale linjen i hamburgerikonet. */
+.hamburger span::after {
+    position: absolute; /* Posisjonerer elementet nøyaktig på siden, uavhengig av andre elementer. */
+    bottom: 0.437rem;
+    left: 0;
+    content: '';
+    width: 100%; /* Full bredde som den sentrale linjen */
+    height: 0.187rem; /* Samme høyde som den sentrale linjen */
+    background-color: var(--primary-color);
+}
+
+/* Pseudo-element for å lage en ekstra linje over den sentrale linjen i hamburgerikonet. */
+.hamburger span::before {
+    position: absolute;
+    top: 0.437rem;
+    left: 0;
+    content: '';
+    width: 100%;
+    height: 0.187rem;
+    background-color: var(--primary-color);
+}
+
+/* Stil for hero-seksjonen. Setter minimumshøyde, bakgrunnsbilde og posisjonering. */
+.hero-section {
+    min-height: calc(100vh - 5.937rem);
+    margin-top: 5.937rem;
+    background-image: url('../image/png/campus.png'); /* Bakgrunnsbilde for seksjonen -  bilde kilde: "campus oslomet", hentet fra: flickr.com (https://www.flickr.com/photos/oslomet/52209277280)
+ /* Hindrer gjentakelse av bakgrunnsbildet */
+    background-position: center;
+    background-size: cover; /* Sørger for at bildet dekker hele seksjonen */
+    position: relative;
+    z-index: 1; /* Z-indeks for stabling av elementer */
+}
+
+/* Mørk overlay for hero-seksjonen for å forbedre lesbarheten av tekst. */
+.hero-section::after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    content: '';
+    background-color: rgba(0, 0, 0, 0.3); /* Mørk, gjennomsiktig farge for kontrast */
+    z-index: -1; /* Plassert bak annet innhold i .hero-section */
+}
+
+/* Stil for innholdet i hero-seksjonen. Bruker flexbox for layout og sentrering. */
+.hero-contant {
+    max-width: 43.75rem;
+    min-height: calc(100vh - 5.937rem);
+    display: flex;
+    flex-direction: column; /* Elementer ordnes vertikalt */
+    justify-content: center;
+    align-items: flex-start; /* Justerer innholdet til venstre side av flex-containeren. */
+}
+
+/* Stil for hovedoverskriften i hero-seksjonen. Fremhever overskriften med stor størrelse og hvit farge. */
+.hero-contant h1 {
+    color: var(--white-color);
+    font-size: 4.375rem;
+    margin-bottom: 0.5rem;
+}
+
+/* Stil for paragraftekst i hero-seksjonen. Leselig størrelse og farge for kontrast mot bakgrunnen. */
+.hero-contant p {
+    color: var(--white-color);
+    font-size: 1.125rem;
+    margin-bottom: 2rem;
+}
+
+/* campus bilder section css */
+/* Setter opp et grid-layout for campus bildekort, med tre kolonner og fast mellomrom mellom dem. */
+.campus-image-card {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Definerer tre kolonner med lik bredde */
+    gap: 3.125rem;
+}
+
+/* Basisstil for hvert individuelle campus kort, inkludert padding, avrundede hjørner og skygge for dybdeeffekt. */
+.campus-card {
+    padding: 1.25rem;
+    border-radius: 0.75rem;
+    box-shadow: rgba(17, 17, 26, 0.1) 0rem 0rem 1rem; /* Lett skygge for å løfte kortet visuelt */
+}
+
+/* Stil for bilder inne i campus-kortene, sikrer at bildene arver avrundingen fra kortet. */
+.campus-card img {
+    border-radius: inherit;
+    min-height: 18.75rem;
+}
+
+/* Tilpasser toppmargen for underoverskrifter inne i campus-kortene for å skape visuell balanse. */
+.campus-image-card .campus-card .section-subheading {
+    margin-top: 0.437rem;
+}
+
+/* campus informasjon section css */
+/* Setter opp en flexbox-layout for campus-inforaden, sentrerer innholdet både vertikalt og horisontalt. */
+.campus-info-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+/* Definerer bredden for venstre kolonne i campus-info-rad. */
+.campus-info-col-left {
+    width: 50%;
+}
+
+/* Begrenser maksbredde for bilder i høyre kolonne av campus-info-rad. */
+.campus-info-col-right img {
+    max-width: 37.5rem;
+}
+
+/* Definerer maksimal bredde for innholdet i campus-info-seksjonen. */
+.campus-info-contant {
+    max-width: 34.375rem;
+}
+
+/* Tilpasser bunnmargen for overskrifter i venstre kolonne for visuell balanse. */
+.campus-info-col-left .section-heading {
+    margin-bottom: 0.875rem;
+}
+
+/* Setter standard bunnmargen for detaljer i campus-info-seksjonen. */
+.campus-detail {
+    margin-bottom: 1.25rem;
+}
+
+/* Setter standard bunnmargen for detaljer i campus-info-seksjonen. */
+.campus-info-col-left .custom-btn {
+    margin-top: 1.5rem;
+}
+
+/* Stil for kontakt-raden med generøs padding, skyggeeffekt, avrundede hjørner, og en distinkt bakgrunnsfarge. */
+.contact-row {
+    padding: 6.25rem 1rem;
+    box-shadow: rgba(67, 71, 85, 0.27) 0rem 0rem 0.25em, rgba(90, 125, 188, 0.05) 0rem 0.25em 1em; /* Dobbel skygge for dybdeeffekt */
+    border-radius: 0.75rem;
+    background-color: var(--yellow-color);
+}
+
+/* Spesifikk stil for knapper inne i kontakt-raden, med kontrastfarger og gjennomsiktig kant. */
+.contact-row .custom-btn {
+    background-color: var(--primary-color);
+    color: white;
+    position: relative;
+    border: 0.006rem solid transparent;  /* Subtil, nesten usynlig kant for en ren finish */
+}
+
+/* Pseudo-element for en visuell fargeskifte på tilpassede knapper i kontakt-raden */
+.contact-row .custom-btn::after {
+    position: absolute;
+    content: '';
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0;
+    background-color: #ffea7d; /* Lys bakgrunnsfarge for effekten */
+    opacity: 0.2; /* Gjør effekten delvis gjennomsiktig */
+    transition: all 0.5s;
+}
+
+/* Utvider pseudo-elementet til full bredde ved hover for en elegant visuell effekt. */
+.contact-row .custom-btn:hover::after {
+    width: 100%;
+    transition: all 0.5s;
+}
+
+/* Endrer stil på tilpassede knapper ved hover med ny bakgrunnsfarge, kant og tekstfarge. */
+.contact-row .custom-btn:hover {
+    background-color: var(--yellow-color);
+    border: 0.006rem solid var(--primary-color);
+    color: var(--primary-color);
+}
+
+/* Organiserer formelementene med flexbox, sentrerer dem og gir mellomrom. */
+.form-control-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.25rem;
+}
+/* Tilpasser bunnmargen for overskrifter i kontakt-raden */
+.contact-row .section-heading {
+    margin-bottom: 1.25rem;
+}
+
+/* Stil for breadcrumb-seksjonen(toppbilde) med et bakgrunnsbilde, padding, og sentrering av bildet. */
+.breadcrumb-sec {
+    /* Bakgrunnsbilde for seksjonen -  bilde kilde: "Samftech", hentet fra: pressbooks.pub (https://pressbooks.pub/anne1/)*/
+    background-image: url('../image/png/SAMFTECH.png');
+    padding: 7.5rem 0;
+    background-repeat: no-repeat; /* Hindrer gjentakelse av bakgrunnsbildet */
+    background-position: center;
+    background-size: cover; /* Sørger for at bildet dekker hele seksjonen */
+    z-index: 1;
+    position: relative;
+    margin-top: 5.937rem;
+}
+
+/* Arver og setter et spesifikt bakgrunnsbilde for .breadcrumb-sec-1 */
+.breadcrumb-sec-1 {
+    /* Bakgrunnsbilde for seksjonen -  bilde kilde: "Atelet", hentet fra: wallpapers.com (https://wallpapers.com/wallpapers/best-sports-ixqrjdah191oqs58.html)*/
+    background-image: url('../image/png/toppbilde-sport.png');
+}
+
+/* Araver og setter et spesifikt bakgrunnsbilde for .breadcrumb-sec-2 */
+.breadcrumb-sec2 {
+/* Bakgrunnsbilde for seksjonen -  bilde kilde: "Teknologi og innovasjon", hentet fra: openscience.fr (https://www.openscience.fr/Technology-and-Innovation)*/
+    background-image: url('../image/png/Accessibility.png');
+}
+
+/* Legger til et mørkt, gjennomsiktig lag over bakgrunnsbildet for bedre lesbarhet av tekst. */
+.breadcrumb-sec::after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    content: '';
+    background-color: rgba(0, 0, 0, 0.3); /* Mørk farge med gjennomsiktighet */
+    z-index: -1; /* Plassert bak annet innhold i .breadcrumb-sec */
+}
+
+/* Stil for H3 overskrifter og lenker i .breadcrumb-sec, med større skriftstørrelse, gul farge og moderat skriftvekt. */
+.breadcrumb-sec h3,
+a {
+    font-size: 1.5rem;
+    color: var(--yellow-color);
+    font-weight: 500;
+}
+
+/* Setter opp en flexbox-layout for .section-wrap med vertikal sentrering og fast mellomrom mellom elementene. */
+.section-wrap {
+    display: flex;
+    align-items: center;
+    gap: 1.875rem;
+}
+
+.section-img{
+    width: 50%;
+}
+
+/* Stil for bilder i .section-img, sikrer at de dekker hele området og er visuelt tiltalende. */
+.section-img img {
+    margin-top: 8%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Sikrer at bildet dekker området uten å miste proporsjoner */
+    border-radius: 0.937rem;
+}
+
+/* Setter opp en layout for informasjonsområdet i en seksjon, med fleksibel organisering av innholdet. */
+.section-info {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 0.937rem;
+}
+
+/* student review pictures section css */
+/* Setter opp en flexbox-layout for tilbakemeldingsområdet med sentrerte elementer og et lite mellomrom. */
+.feedback-wrap {
+    display: flex;
+    align-items: center;
+    gap: 0.625rem;
+}
+
+/* Definerer stilen for H6 overskrifter i tilbakemeldingsområdet. */
+.feedback-wrap h6 {
+    font-size: 1.125rem;
+}
+
+/* Stil for bilder i tilbakemeldingsområdet, med fast størrelse og avrundet form. */
+.feedback-wrap img {
+    height: 4rem;
+    width: 4rem;
+    border-radius: 50%; /* Gjør bildene sirkulære */
+    object-fit: cover;
+}
+
+/* Setter opp et grid-layout for studenttilbakemeldinger med tre kolonner og rom mellom dem. */
+.student-reviews-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Tre kolonner med lik bredde */
+    gap: 3.125rem;
+}
+/* Stil for hver enkelt DIV i studenttilbakemeldinger, med skygge, padding og avrundede hjørner. */
+.student-reviews-col {
+    box-shadow: rgba(0, 0, 0, 0.05) 0rem 0rem 0rem 0.062rem; /* Lett skygge for dybdeeffekt */
+    padding: 2.375rem;
+    border-radius: 0.75rem;
+    transition: all 0.5s;
+}
+
+/* Øker skyggeeffekten når brukeren holder musepekeren over en tilbakemeldingskolonne. */
+.student-reviews-col:hover {
+    box-shadow: rgba(50, 50, 93, 0.25) 0rem 0.375rem 0.75rem -0.125rem, rgba(0, 0, 0, 0.3) 0rem 0.187rem 0.437rem --0.187rem; /* Større og mørkere skygge for fremheving */
+    transition: all 0.5s;
+}
+
+/* Stil for underoverskrifter i studentanmeldelse-DIV bokser, med padding, moderat skriftvekt og primærfarge. */
+.student-reviews-col .section-subheading {
+    padding-bottom: 0.75rem;
+    font-weight: 500;
+    color: var(--primary-color);
+}
+
+/* Tilpasser stilen for sitater i studentanmeldelse-DIV boksene, 
+<q> tagger i studentanmeldelseskolonner, brukt for å formatere korte sitater med god lesbarhet og visuell tiltrekningskraft. */
+.student-reviews-col q {
+    padding-bottom: 1.25rem;
+    display: block; /* Gjør sitatet til et blokkelement */
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+/* IDRETT section css */
+/* Setter opp en flexbox-layout for topical-row med sentrerte elementer og stort mellomrom. */
+.topical-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6.25rem;
+}
+
+/* Definerer maksimal bredde for venstre kolonne i topical-row. */
+.topical-col-left {
+    max-width: 37.5rem;
+}
+
+/* Definerer maksimal bredde for bilder i høyre kolonne av topical-row. */
+.topical-col-right img {
+    max-width: 37.5rem;
+}
+
+/* Tilpasser bunnmargen for overskrifter i venstre kolonne for visuell balanse. */
+.topical-col-left .section-heading {
+    margin-bottom: 0.875rem;
+}
+
+/* Setter standard bunnmargen for detaljer i topical-seksjonen. */
+.topical-detail {
+    margin-bottom: 0.875rem;
+}
+
+/* Justerer toppmargen for tilpassede knapper i venstre kolonne for å skape plass. */
+.topical-col-left .custom-btn {
+    margin-top: 1.5rem;
+}
+
+/* Stil for den andre seksjonen i topical-layouten, med en lett bakgrunnsfarge og passiv padding. */
+.second-topical-section {
+    background-color: var(--lightblack-color);
+    padding: 4.375rem 0;
+    margin-top: 1.875rem;
+}
+
+/* trener section css */
+/* Stil for bilder av "trenere på skolen" i Idrett.html siden , med fast størrelse, rund form og overgangseffekt. */
+.sport-trainer {
+    height: 7.5rem;
+    width: 7.5rem;
+    border-radius: 50%;
+    margin-bottom: 1rem; /* Margin nedenfor for å skille bildet fra tekst */
+    object-fit: cover;
+    transition: all 0.5s;
+}
+
+/* Zoom-inn effekt for sportsinstruktørens bilde ved hover over treningskortet. */
+.our-trainer-card:hover .sport-trainer {
+    transform: scale(1.1); /* Forstørrer bildet litt */
+    transition: all 0.5s; 
+}
+
+/* Stil for hver 'div' som representerer et treningsinstruktør kolonner, med skygge, padding og sentrert tekst. */
+.our-trainer-card {
+    box-shadow: rgba(149, 157, 165, 0.2) 0rem 0.5rem 1.5rem; /* Lett skygge for visuell dybde */
+    padding: 2.5rem 3.125rem;
+    border-radius: 0.75rem;
+    text-align: center; /* Sentrerer all tekst i div-kortet */
+}
+
+/* Setter opp et grid-layout for 'div'-elementene som representerer treningsinstruktører, med fire kolonner. */
+.our-trainer-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+}
+
+/* Tilpasser bunnmargen for underoverskrifter i hvert treningsinstruktør 'div'-boks. */
+.our-trainer-card .section-subheading {
+    margin-bottom: 0.375rem;
+}
+
+/* våre ulike idrett section css */
+/* Setter opp et grid-layout for 'div'-elementer i idrettsaktivitetsområdet med tre kolonner. */
+.oursport-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+/* Stil for 'div'-innpakningen av sportbilder, med fast høyde og en hover-effekt. */
+.sport-image-wrap {
+    position: relative;
+    height: 14.375rem;
+    overflow: hidden; /* Skjuler deler av bildet som går utenfor 'div'-elementets grenser */
+}
+
+/* Pseudo-element for en mørkleggings-effekt på bilder i 'div'-elementet, som aktiveres ved hover. */
+.sport-image-wrap::after {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    content: ' '; /* Tomt innhold, men nødvendig for å vise pseudo-elementet */
+    background-color: rgba(0, 0, 0, 0.3); /* Mørk, gjennomsiktig farge for effekten */
+    height: 0%; /* Starter uten høyde og utvides ved hover */
+    width: 100%;
+    transition: all 0.5s;
+}
+
+/* Utvider det mørke laget til å dekke hele 'div'-elementet ved hover for en markant visuell effekt. */
+.sport-image-wrap:hover::after {
+    height: 100%;
+    transition: all 0.5s;
+}
+
+/* Stil for H4 innenfor sport-name-wrap. Posisjonert absolutt for å plasseres nøyaktig over bildet. */
+.sport-name-wrap h4 {
+    position: absolute;
+    transform: translateX(-50%); /* Sentrerer horisontalt */
+    bottom: -1.875rem;
+    left: 50%;
+    font-size: 1.5rem;
+    color: var(--yellow-color);
+    z-index: 1;
+    transition: all 0.5s;
+}
+
+/* Endrer posisjonen til H4 når musen holdes over sport-image-wrap, skaper en "pop-up" effekt. */
+.sport-image-wrap:hover .sport-name-wrap h4 {
+    bottom: 1.25rem;
+    transition: all 0.5s;
+}
+
+/* Idrettsturninger section css */
+/* Setter opp et grid-layout for idrettsturninger med tre kolonner og mellomrom mellom dem. */
+.sport-activity-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Tre kolonner med lik bredde */
+    gap: 1.25rem;
+}
+
+/* Grunnleggende stil for hver turneringskolonne, inkludert padding og en lett kant. */
+.sport-activity-col {
+    padding: 0.625rem;
+    border: 0.062rem solid rgb(215 215 215);
+}
+
+/* Stil for overskrifter i turneringsdetaljer, med større skriftstørrelse og primærfarge. */
+.sport-activity-detail h4 {
+    font-size: 1.5rem;
+    margin: 0.625rem 0 0rem;
+    color: var(--primary-color); /* Lys kant for å definere kolonnen */
+}
+
+/* Stil for overskrifter i idrettsturnering detaljer, med større skriftstørrelse og primærfarge. */
+.sport-activity-detail span {
+    font-size: 0.875rem;
+    display: block;
+    margin-bottom: 1rem;
+}
+
+/* Stil for spans i idrettsturnering detaljer, brukes for tilleggsinformasjon med blokkvisning og margin. */
+.sport-activity-detail p {
+    margin-bottom: 1.125rem;
+}
+
+/* Stil for bilder i idrettsturneringskolonnene, med fast høyde og full bredde. */
+.sport-activity-image img {
+    height: 18.75rem;
+    width: 100%;
+}
+
+/* Basisstil for lenker i detaljseksjonen av hver idrettsturneringskolonne. */
+.sport-activity-detail a {
+    padding: 0.75rem;
+    font-size: 0.875rem;
+    color: var(--primary-color);
+    border: 0.187rem solid var(--primary-color); /* Fremhevet kant for å skille lenken */
+    display: block;
+    max-width: max-content; /* Bredden tilpasser seg tekstens lengde */
+    font-weight: 700;
+    transition: all 0.5s;
+    margin-top: auto; /* Justerer toppmargen for vertikal plassering */
+}
+
+/* Fast høyde for bildeområdet i idrettsturneringskolonnene. */
+.sport-activity-image {
+    height: 18.75rem;
+}
+
+/* Hover-effekt for lenker: endrer farge for å fremheve interaktivitet. */
+.sport-activity-detail a:hover {
+    color: var(--yellow-color);
+    transition: all 0.5s;
+}
+
+/* Layout for detaljer om idrettsturneringer i hver kolonne, med enkel organisering. */
+.sport-activity-detail {
+    padding: 0.625rem 0;
+    display: flex; /* Bruker flexbox for organisering */
+    flex-direction: column;
+    height: calc(100% - 20rem); /* Høyde tilpasset etter bildeområdet */
+    margin-top: 0.625rem;
+}
+
+/* tidligere idrettsutøvere section css */
+/* Grid-layout for `div`-bokser i idretts-galleriet, med tre kolonner og jevnt mellomrom. */
+.idrett-gallary-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.75rem;
+}
+
+/* Grunnstil for hver `div`-boks i galleriet, med mørk bakgrunn og pekerkursor. */
+.idrett-gallary-item {
+    position: relative;
+    background: #000;
+    cursor: pointer;
+}
+/* Normal skriftstørrelse for lenker i galleriets `div`-bokser. */
+.idrett-gallary-item a{
+    font-size: 100%;
+}
+
+/* Stil for overskrifter i gallerielementene, skjult som standard og sentrert over bilder. */
+.idrett-gallary-item h6 {
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%); /* Sentrerer teksten nøyaktig */
+    left: 50%;
+    width: 100%;
+    padding: 0.625rem;
+    text-align: center;
+    font-size: 1.5rem;
+    color: #fff; /* Hvit tekst for kontrast mot mørk bakgrunn */
+    opacity: 0; /* Gjør teksten usynlig som standard */
+    transition: all 0.5s;
+}
+
+/* Viser overskriften når gallerielementet holdes over, for en interaktiv effekt. */
+.idrett-gallary-item:hover h6 {
+    opacity: 1;
+    transition: all 0.5s;
+}
+
+/* Stil for bilder i galleriets `div`-bokser, med full dekning og overgangseffekt. */
+.idrett-gallary-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: all 0.5s;
+}
+
+/* Reduserer opasitet for bilder i `div`-boksen ved hover. */
+.idrett-gallary-item:hover img {
+    opacity: 0.5;
+}
+
+/* Stil for ekstra informasjonstekst i overskriften, vises som en blokk. */
+.idrett-gallary-item h6 span {
+    display: block;
+    font-size: 0.812rem;
+    font-weight: 400;
+    margin-top: 0.625rem;
+}
+/* footer section css */
+/* Grid-layout for `div`-bokser i foteren, med tre kolonner og jevnt mellomrom. */
+footer {
+    border-top: 0.062rem solid rgb(233, 233, 233);
+}
+
+/* Grid-layout for rader i footer, med tre kolonner og fast mellomrom. */
+.footer-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    padding-top: 1.875rem;
+}
+
+/* Fjerner standard listestil for lister i footer. */
+.footer-row ul {
+    list-style: none;
+}
+
+/* Stil for lenkelister i footer, med jevne mellomrom mellom listeelementene. */
+.footer-link li {
+    margin-bottom: 0.375rem;
+}
+
+/* Stil for lenker i footer, med overgangseffekt ved hover. */
+.footer-link li a {
+    color: var(--lightgrey-color); /* Lett gråfarge for lenker */
+    font-size: 1.125rem;
+    font-weight: 500;
+    transition: all 0.3s;
+}
+
+/* Endrer lenkefargen ved hover for interaktivitet. */
+.footer-link li a:hover {
+    color: var(--yellow-color);
+    transition: all 0.3s;
+}
+
+/* Grunnstil for hver `div`-boks som representerer en kolonne i foteren. */
+.footer-col h6 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+    color: var(--primary-color);
+}
+
+.footer-link li {
+    color: var(--lightgrey-color);
+    font-size: 1.125rem;
+    font-weight: 500;
+}
+
+/* Fleksibel container for sosiale medieikoner i foteren, hver `div`-boks som et ikon. */
+.footer-icon {
+    min-height: 2.5rem;
+    min-width: 2.5rem;
+    border-radius: 0.375rem;
+    background-color: rgb(226, 226, 226); /* Lett grå bakgrunnsfarge */
+    display: flex; /* Aktiverer flexbox for sentrering av innhold */
+    align-items: center;
+    justify-content: center;
+    transition: all 0.5s;
+}
+
+/* Gjør bildeteksten til et blokkelement for å sikre at den vises korrekt. */
+.bildetekst{
+    display: block;
+}
+
+/* Stil for lenker i bildeteksten, med standard farge og understrekning. */
+.bildetekst a{
+    color: black;
+    font-size: small;
+    text-decoration: underline;
+}
+
+/* Hover-effekt for `div`-bokser som representerer sosiale medieikoner i foteren. */
+.footer-icon:hover {
+    background-color: var(--yellow-color);
+    color: var(--primary-color);
+    transition: all 0.5s;
+}
+
+/* Sikrer at lenker i breadcrumb-seksjonen har understrekning for å indikere klikkbarhet. */
+.breadcrumb-sec  a {
+    text-decoration: underline;
+}
+
+/* Flexbox-layout for `div`-bokser som omslutter kolonnene i foteren. */
+.footer-col-wrap {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+}
+/* bunntekst om opphavsrett */
+/* Stil for avsnitt i opphavsrettsdelen av foteren, med padding og lys tekstfarge. */
+.footer-copyright p {
+    padding: 1rem 0;
+    color: var(--lightgrey-color);
+
+}
+
+/* Grunnstil for `div`-boksen som inneholder opphavsrettsinformasjonen i foteren. */
+.footer-copyright {
+    margin-top: 1.875rem;
+    border-top: 0.062rem solid rgb(233, 233, 233);
+}
+
+/* Generell padding-stil for avsnitt i seksjoner, gir romslighet over og under teksten. */
+.section-p {
+    padding: 2.5rem 0;
+}

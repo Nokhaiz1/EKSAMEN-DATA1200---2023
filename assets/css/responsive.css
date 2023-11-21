@@ -1,0 +1,583 @@
+/* Vi har valgt å plassere vår CSS-kode for responsivt design i et eget stilark fordi det gir bedre organisering og forenkler vedlikeholdet. 
+Dette lar oss raskt finne og oppdatere stiler relatert til responsivitet, noe som er svært nyttig, spesielt i større prosjekter hvor CSS-filene
+ kan bli omfangsrike og komplekse. Denne tilnærmingen hjelper oss å holde en klar separasjon mellom generell styling og spesifikke responsiv-designjusteringer. */
+
+ /* Responsive Design: Medie Queries */
+
+/* Responsiv stil for skjermer opp til 1599px i bredde - tilpasset for store enheter. */
+@media(max-width:1599px){
+     /* Reduserer mellomrommet i campus-bildekort for bedre tilpasning på mindre skjermer. */
+    .campus-image-card {
+        gap: 2.25rem; /* Mindre gap mellom elementene for bedre layout */
+    }
+
+    /* Justerer skriftstørrelsen på hovedoverskrifter for bedre lesbarhet på mindre skjermer. */
+    .section-title {
+        font-size: 1.875rem;
+    }
+    .section-heading {
+        font-size: 1.875rem;
+    }
+
+    /* Tilpasser skriftstørrelsen på hovedoverskriften i hero-seksjonen for mindre skjermer. */
+    .hero-contant h1 {
+        font-size: 3.25rem;
+    }
+}
+
+/* Responsiv stil for skjermer opp til 1439px i bredde - tilpasset for store enheter og store bærbare datamaskiner. */
+@media(max-width:1439px){
+    /* Justerer høyden på bildeomslaget i sportsseksjonen for mindre skjermer. */
+    .sport-image-wrap {
+        height: 12.5rem;
+    }
+
+    /* Tilpasser høyden på bilder i idrettsturnering seksjonenen. */
+    .sport-activity-image img {
+        height: 15rem;
+    }
+
+    /* Endrer padding for tilpasse knapper for å passe bedre på mindre skjermer. */
+    .custom-btn {
+        padding: 0.625rem 1.5rem;
+    }
+
+    /* Reduserer maksimal bredde for bilder i høyre kolonne av topical-seksjonen. */
+    .topical-col-right img {
+        max-width: 31.25rem;
+    }
+
+     /* Justerer gapet i topical-raden for å passe bedre på mindre skjermer. */
+    .topical-row {
+        gap: 3.125rem;
+    }
+
+    /* Tilpasser margin og skriftstørrelse for overskrifter i venstre kolonne av topical-seksjonen. */
+    .topical-col-left .section-heading {
+        margin-bottom: 0.625rem;
+        font-size: 1.875rem;
+    }
+
+    /* Setter maksimal bredde for venstre kolonne i topical-seksjonen. */
+    .topical-col-left {
+        max-width: 29.625rem;
+    }
+
+    /* Justerer stil for tilpassede knapper i venstre kolonne av topical-seksjonen. */
+    .topical-col-left .custom-btn {
+        padding: 0.5rem 1.25rem;
+        font-size: 0.9375rem;
+    }
+
+    /* Justerer padding for den andre seksjonen i topical-layouten. */
+    .second-topical-section {
+        padding: 2.5rem 0;
+    }
+}
+
+/* Responsiv stil for skjermer opp til 1279px i bredde - tilpasset for små bærbare datamaskiner. */
+@media(max-width:1279px){
+    /* Justerer maksimal bredde for hero-seksjonsinnholdet til mindre skjermer. */
+    .hero-contant {
+        max-width: 30.06rem;
+    }
+     /* Reduserer skriftstørrelsen på underoverskrifter for bedre lesbarhet på mindre skjermer. */
+    .section-subheading {
+        font-size: 1.375rem;
+    }
+
+    /* Justerer skriftstørrelsen på overskrifter for konsistens på mindre skjermer. */
+    .section-heading {
+        font-size: 1.875rem;
+    }
+    /* Endrer padding for kontakt-rad for bedre utnyttelse av plassen på små skjermer. */
+    .contact-row {
+        padding: 5.5rem 1rem;
+    }
+    /* Tilpasser skriftstørrelsen for seksjonstitler til små skjermer. */
+    .section-title {
+        font-size: 1.75rem;
+    }
+     /* Øker padding i studentanmeldelseskortene for en bedre visuell balanse. */
+    .student-reviews-col {
+        padding: 1.562rem;
+    }
+     /* Tilføyer venstre padding til overskrifter i breadcrumb-seksjonen for stilistisk effekt. */
+    .breadcrumb-sec h3 {
+        padding-left: 3.75rem;
+    }
+      /* Justerer skriftstørrelsen på overskrifter i venstre kolonne av topical-seksjonen. */
+    .topical-col-left .section-heading {
+        font-size: 1.75rem;
+    }
+      /* Opprettholder gapet i topical-raden for konsistent layout på mindre skjermer. */
+    .topical-row {
+        gap: 3.125rem;
+    }
+}
+/* Responsiv stil for skjermer opp til 1199px i bredde - tilpasset for store nettbrett. */ 
+@media(max-width:1199px){
+      /* Justerer maksimal bredde for bilder i høyre kolonne av campus-info-seksjonen. */
+    .campus-info-col-right img {
+        max-width: 26.25rem;
+    }
+    /* Reduserer skriftstørrelsen på seksjonstitler for optimalisering på nettbrett. */
+    .section-title {
+        font-size: 1.75rem;
+    }
+     /* Tilpasser skriftstørrelsen på overskrifter for bedre lesbarhet på nettbrett. */
+    .section-heading {
+        font-size: 1.625rem;
+    }
+    /* Justerer skriftstørrelsen på breadcrumb-overskrifter for nettbrett-skjermer. */
+    .breadcrumb-sec h3 {
+        font-size: 1.25rem;
+    }
+     /* Endrer høyden på sport-bildeomslaget for å passe bedre på nettbrett. */
+    .sport-image-wrap {
+        height: 10rem;
+    }
+      /* Tilpasser høyden på sportsaktivitetsbilder for nettbrett. */
+    .sport-activity-image img {
+        height: 12.5rem;
+    }
+     /* Justerer skriftstørrelse og margin for overskrifter i venstre kolonne av topical-seksjonen. */
+    .topical-col-left .section-heading {
+        font-size: 1.625rem;
+        margin-bottom: 0.375rem;
+    }
+
+    /* Justerer maksimal bredde for bilder i høyre kolonne av topical-seksjonen. */
+    .topical-col-right img {
+        max-width: 28.125rem;
+    }
+
+    /* Justerer gapet i topical-raden for bedre layout på nettbrett. */
+    .topical-row {
+        gap: 2.5rem;
+    }
+      /* Reduserer skriftstørrelsen på underoverskrifter i studentanmeldelser for nettbrett. */
+    .student-reviews-col .section-subheading {
+        font-size: 1.25rem;
+    }
+    /* Tilpasser skriftstørrelsen og linjeavstanden for paragrafer for lesbarhet på nettbrett. */
+    .paragraph {
+        font-size: 1rem;
+        line-height: normal;
+    }
+    /* Justerer padding for breadcrumb-seksjonen for å passe bedre på nettbrett. */
+    .breadcrumb-sec {
+        padding: 5.625rem 0;
+    }
+}
+/* Responsiv stil for skjermer opp til 991px i bredde - tilpasset for normale nettbrett. */ 
+@media(max-width:991px){
+
+    /* Stil for navigasjonslenker, omgjøres til en fast posisjonert meny på mindre skjermer. */
+    .navlink {
+        position: fixed; /* Gjør lenkene faste på skjermen */
+        z-index: 100; /* Sørger for at menyen er over andre elementer */
+        top: 0;
+        right: 0;
+        width:21.875rem;
+        height: 100vh;
+        background-color:white;
+        display: flex; /* Aktiverer flexbox for organisering */
+        flex-direction: column;
+        transform: translateX(100%);
+        transition: transform 0.2s ease;
+        gap: 2.5rem;
+        padding-top: 7.5rem; /* Topp-padding for å unngå overlapping med andre elementer */
+      }
+
+    /* Viser navigasjonslenkene når navigasjonsmålet er aktivt. */
+      .navlink:target {
+        transform: translateX(0); /* Flytter menyen inn på skjermen */
+      }
+
+    /* Gjør hamburger-ikonet synlig på mindre skjermer. */
+      .hamburger{
+        display: block;
+      }
+    /* Stil for lukkeknappen, vises for å lukke navigasjonsmenyen. */
+      .closebtn{
+        display: block;
+        position: absolute; /* Posisjonert i forhold til nærmeste relativt posisjonerte forelder */
+        top: 0; 
+        right: 0;
+      }
+
+    /* Justerer maksimal bredde for innhold i hero-seksjonen på nettbrett. */
+    .hero-contant{
+        max-width: 80%;
+    }
+
+    /* Tilpasser grid-layout for campus-bildekort til to kolonner på nettbrett. */
+    .campus-image-card {
+        grid-template-columns: repeat(2, 1fr); /* To kolonner med lik bredde */
+        gap: 1.75rem;
+    }
+
+    /* Justerer topp-padding for seksjoner for å passe bedre på nettbrett. */
+    .section-padding {
+        padding-top: 1.5rem;
+    }
+     /* Justerer flex-layout for campus-info-rad for bedre flyt på nettbrett. */
+    .campus-info-row {
+        flex-direction: row-reverse; /* Bytter rekkefølgen på kolonnene */
+
+        flex-wrap: wrap;
+    }
+
+    /* Tilpasser bredde for venstre kolonne i campus-info-rad på nettbrett. */
+    .campus-info-col-left {
+        width: 80%;
+    }
+
+    /* Setter maksimal bredde for innholdet i campus-info til full bredde på nettbrett. */
+    .campus-info-contant {
+        max-width:100%;
+    }
+
+    /* Justerer grid-layout for treningsinstruktørseksjonen til tre kolonner på nettbrett. */
+    .our-trainer-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    /* Endrer grid-layout for studentanmeldelser til to kolonner for bedre tilpasning på nettbrett. */
+    .student-reviews-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* Justerer grid-layout for idrettsgalleri til tre kolonner på nettbrett. */
+    .oursport-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    /* Justerer høyden på bilder i sportsaktivitetsseksjonen for nettbrett. */
+    .sport-activity-image img {
+        height: 13.75rem;
+    }
+
+    /* Endrer grid-layout for sportsaktivitetsseksjonen til to kolonner på nettbrett. */
+    .sport-activity-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* Justerer maksimal bredde for venstre kolonne i topical-seksjonen for nettbrett. */
+    .topical-col-left {
+        max-width: 31.125rem;
+    }
+
+    /* Justerer maksimal bredde for bilder i høyre kolonne av topical-seksjonen. */
+    .topical-col-right img {
+        max-width: 31.25rem;
+    }
+
+    /* Setter flex-direction for topical-rad til kolonne for bedre flyt på nettbrett. */
+    .topical-row {
+        flex-direction: column;
+    }
+
+    /* Endrer rekkefølgen på kolonnene i den andre topical-seksjonen for visuell effekt. */
+    .second-topical-section .topical-col-left{
+        order: 2; /* Setter venstre kolonne til å vises sist */
+    }
+
+    .second-topical-section .topical-col-right{
+        order: 1; /* Setter høyre kolonne til å vises først */
+    }
+
+    /* Justerer gapet i topical-raden for en bedre visuell tilpasning på nettbrett. */
+    .topical-row {
+        gap: 0.75rem;
+    }
+}
+
+/* Responsiv stil for skjermer opp til 767px i bredde - tilpasset for mobilskjermer. */ 
+@media(max-width:767px){ 
+    /* Justerer maksimal bredde for bilder i høyre kolonne av campus-info-seksjonen. */
+    .campus-info-col-right img {
+        max-width: 100%;
+    }
+
+    /* Endrer bredde for venstre kolonne i campus-info-seksjonen til full bredde. */
+    .campus-info-col-left {
+        width: 100%;
+    }
+
+     /* Reduserer skriftstørrelsen på overskrifter for optimalisering på mobilskjermer. */
+    .section-heading {
+        font-size: 1.5rem;
+    }
+
+    /* Justerer grid-layout for foteren til to kolonner på mobilskjermer. */
+    .footer-row {
+        grid-template-columns: repeat(2, 1fr); /* To kolonner for en kompakt visning */
+    }
+
+    /* Tilpasser skriftstørrelsen og margin for overskrifter i footer-kolonner på mobil. */
+    .footer-col h6 {
+        font-size: 1.25rem;
+        margin-bottom: 0.375rem;
+    }
+
+    /* Justerer skriftstørrelsen på paragrafer i hero-seksjonen for mobilskjermer. */
+    .hero-contant p {
+        font-size: 1rem;
+    }
+
+    /* Setter maksimal bredde for hero-seksjonsinnhold til full bredde på mobil. */
+    .hero-contant {
+        max-width: 100%;
+    }
+
+    /* Endrer minste høyde for bilder i campus-kortene for mobilskjermer. */
+    .campus-card img {
+        min-height: 15.625rem;
+    }
+
+    /* Justerer skriftstørrelsen og toppmargin for underoverskrifter på mobil. */
+    .section-subheading {
+        font-size: 1.125rem;
+        margin-top: 0.25rem;
+    }
+
+    /* Tilpasser skriftstørrelsen for logoen i headeren på mobilskjermer. */
+    .header-logo {
+        font-size: 2rem;
+    }
+
+    /* Justerer padding for navigasjonsbaren på mobilskjermer. */
+    .navbar {
+        padding: 0.75rem;
+    }
+
+    /* Endrer grid-layout for treningsinstruktørseksjonen til to kolonner på mobil. */
+    .our-trainer-grid {
+        grid-template-columns: repeat(2, 1fr); /* To kolonner for en bedre visning */
+    }
+
+    /* Justerer skriftstørrelsen på paragrafer i studentanmeldelseskortene for mobil. */
+    .student-reviews-col .paragraph {
+        font-size: 0.875rem;
+    }
+
+    .testimonial-wrap h6 {
+        font-size: 1rem; /* Redusert skriftstørrelse for overskrifter */
+    }
+
+     /* Justerer grid-layout for idrettsgalleriet til to kolonner på mobil. */
+    .oursport-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* Justerer skriftstørrelsen på overskrifter i testimonial-seksjonen for mobiltilpasning. */
+    .sport-activity-grid {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    /* Endrer grid-layout for sportsgalleriet til én kolonne på mobil for enklere navigasjon. */
+    .sport-gallary-grid {
+        grid-template-columns: repeat(1, 1fr);  /* Etablerer én enkelt kolonne */
+        gap: 0.5rem;
+    }
+
+    /* Setter maksimal bredde for venstre kolonne i topical-seksjonen til full bredde på mobil. */
+    .topical-col-left {
+        max-width:100%;
+    }
+
+    /* Justerer maksimal bredde for bilder i høyre kolonne av topical-seksjonen til full bredde. */
+    .topical-col-right img {
+        max-width:100%;
+    }
+
+    /* Justerer bredden på navigasjonslenkene til en fast størrelse på mobilskjermer. */
+    .navlink {
+        width: 18.75rem;
+    }
+
+    /* Setter en spesifikk toppmargin for breadcrumb-seksjonen på mobil for å unngå overlapping. */
+     .breadcrumb-sec {
+        margin-top:4.5rem;
+    }
+
+    /* Setter en tilsvarende toppmargin for hero-seksjonen på mobilskjermer. */
+    .hero-section{
+        margin-top:4.5rem;
+    }
+}
+
+/* Responsiv stil for skjermer opp til 575px i bredde - tilpasset for små mobiltelefoner. */
+@media(max-width:575px){
+    /* Justerer skriftstørrelsen på underoverskrifter for bedre lesbarhet på små skjermer. */
+    .section-subheading {
+        font-size: 1rem;
+    }
+
+    /* Endrer minste høyde for bilder i campus-kortene for små skjermer. */
+    .campus-card img {
+        min-height: 12.5rem;
+    }
+
+    /* Tilpasser skriftstørrelsen og padding for tilpassede knapper på små skjermer. */
+    .custom-btn {
+        font-size: 0.75rem;
+        padding: 0.5rem 1rem;
+    }
+
+    /* Justerer skriftstørrelsen på vanlige paragrafer for bedre lesbarhet på små skjermer. */
+    .paragraph {
+        font-size: 0.875rem;
+    }
+
+    /* Endrer skriftstørrelsen på overskrifter for bedre tilpasning på små skjermer. */
+    .section-heading {
+        font-size: 1.25rem;
+    }
+
+    /* Tilpasser padding for tilpassede knapper for å forbedre håndterbarheten på små mobiltelefoner. */
+    .custom-btn {
+        padding: 0.625rem 1.125rem;
+    }
+     /* Justerer størrelsen på formkontroller for å passe bedre på små mobilskjermer. */
+    .form-control {
+        padding: 0.635rem 1rem;
+        font-size: 0.875rem;
+        max-width: 15.625rem;
+    }
+
+    /* Tilpasser skriftstørrelsen for lenkelister i foteren på små skjermer. */
+    .footer-link li {
+        font-size: 0.875rem;
+    }
+
+    /* Justerer skriftstørrelsen og margin for footer-kolonneoverskrifter på små mobiltelefoner. */
+    .footer-col h6 {
+        font-size: 1.125rem;
+        margin-bottom: 0.25rem;
+    }
+
+    /* Justerer skriftstørrelsen på tekst i opphavsrettsseksjonen i foteren. */
+    .footer-copyright p {
+        font-size: 0.875rem;
+    }
+
+    /* Endrer padding for breadcrumb-seksjonen for bedre tilpasning på små skjermer. */
+    .breadcrumb-sec {
+        padding: 4.125rem 0;
+    }
+
+    /* Justerer bunnmargin for underoverskrifter i 'about' hovedomslaget. */
+    .about-main-wrap .section-subheading {
+        margin-bottom: 0.75rem;
+    }
+
+    /* Endrer gapet i treningsinstruktørgriden for bedre layout på små skjermer. */
+    .our-trainer-grid {
+        gap: 1.125rem;
+    }
+
+    /* Tilpasser størrelsen på bilder av sportsinstruktører for mobilvisning. */
+    .sport-trainer {
+        height: 5rem;
+        width: 5rem;
+    }
+
+    /* Setter studentanmeldelsesgriden til én kolonne på små skjermer. */
+    .student-reviews-grid {
+        grid-template-columns: repeat(1, 1fr); /* Én enkelt kolonne for enkel navigasjon */
+    }
+
+    /* Tilpasser stil og plassering for tilpassede knapper i venstre kolonne av topical-seksjonen. */
+    .topical-col-left .custom-btn {
+        margin-top: 1.125rem;
+        font-size: 0.75rem;
+    }
+
+    /* Justerer skriftstørrelsen på paragrafer i venstre kolonne av topical-seksjonen. */
+    .topical-col-left p {
+        font-size: 0.875rem;
+    }
+
+    /* Endrer gapet i topical-raden for en strammere layout på små skjermer. */
+    .topical-row {
+        gap: 0.5rem;
+    }
+
+    /* Justerer skriftstørrelsen på overskrifter i venstre kolonne av topical-seksjonen. */
+    .topical-col-left .section-heading {
+        font-size: 1.375rem;
+    }
+
+    /* Tilpasser bredden på navigasjonslenkene for mobilvisning. */
+    .navlink {
+        width: 16.25rem;
+    }
+
+    /* Justerer skriftstørrelsen på lenker i foteren for bedre lesbarhet på små skjermer. */
+    .footer-link li a {
+        font-size: 0.875rem;
+    }
+
+    /* Bruker wrap og setter gap for .section-wrap for bedre layout på små skjermer. */
+    .section-wrap {
+        flex-wrap: wrap;
+        gap: 0.625rem;
+    }
+
+    /* Setter bredde for .section-info og .section-img til full bredde på små skjermer. */
+    .section-info, .section-img {
+        width: 100%;
+    }
+
+    /* Justerer rekkefølgen for elementer med klassen .order i flex-container. */
+    .order{
+        order: 1;
+    }
+}
+
+/* Responsiv stil for skjermer opp til 479px i bredde - tilpasset for svært små mobiltelefoner. */
+@media(max-width:479px){
+    /* Justerer skriftstørrelsen for logoen i headeren for bedre tilpasning på svært små skjermer. */
+    .header-logo {
+        font-size: 1.75rem;
+    }
+    /* Endrer grid-layout for campus-bildekort til én kolonne for enklere navigasjon. */
+    .campus-image-card {
+        grid-template-columns: repeat(1, 1fr);
+    }
+    /* Reduserer skriftstørrelsen på overskrifter for optimalisering på svært små skjermer. */
+    .section-heading {
+        font-size: 1.125rem;
+    }
+    /* Justerer skriftstørrelsen på seksjonstitler for bedre lesbarhet på svært små skjermer. */
+    .section-title {
+        font-size: 1.25rem;
+    }
+     /* Tilpasser padding for tilpassede knapper for bedre håndterbarhet på svært små skjermer. */
+    .custom-btn {
+        padding: 0.5rem 1.125rem;
+    }
+    /* Endrer padding for breadcrumb-seksjonen for bedre layout på svært små skjermer. */
+    .breadcrumb-sec {
+        padding: 3rem 0;
+    }
+    /* Justerer høyden på sport-bildeomslaget for optimalisering på svært små skjermer. */
+    .sport-image-wrap {
+        height: 13.125rem;
+    }
+    /* Setter sportsseksjonsgriden til én kolonne for enklere visning på små skjermer. */
+    .oursport-grid {
+        grid-template-columns: repeat(1, 1fr);
+    }
+      /* Justerer margin-top for breadcrumb- og hero-seksjonen for bedre layout. */
+    .breadcrumb-sec{
+        margin-top: 4.125rem;
+    }
+    .hero-section{
+        margin-top: 4.125rem;
+    }
+}
+/* responsive css slutt */
